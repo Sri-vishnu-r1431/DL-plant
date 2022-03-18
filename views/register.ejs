@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles/style.css">
+    <link rel="stylesheet" href="/styles/register.css">
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/fontawesome.min.css">
+    <link rel="stylesheet" href="fontawesome-free-5.15.4-web/css/all.css">
+    <title>Register</title>
+
+</head>
+
+<body>
+
+    <div class="square" style="--i:0;"></div>
+    <div class="square" style="--i:1;"></div>
+    <div class="square" style="--i:2;"></div>
+    <div class="square" style="--i:3;"></div>
+    <div class="square" style="--i:4;"></div>
+    <div class="square" style="--i:5;"></div>
+    <div class="square" style="--i:6;"></div>
+    <div class="square" style="--i:7;"></div>
+    <div class="container">
+        <form action="/api/users" method="POST" autocomplete="off">
+            <h1 id="header">Register</h1>
+            <div class="box">
+                <i class="fas fa-envelope" aria-hidden="true"></i>
+                <input type="email" placeholder="E-Mail" id="mail" required name="User[Email]">
+                <i class="fas fa-check-circle"></i>
+                <i class="fas fa-exclamation-circle"></i>
+                <small>Error message</small>
+
+            </div>
+
+            <div class="box">
+                <i class="fas fa-user-tie" aria-hidden="true" id="usr"></i>
+                <input type="text" placeholder="Username" id="user" required name="User[Name]">
+                <i class="fas fa-check-circle"></i>
+                <i class="fas fa-exclamation-circle"></i>
+                <small>Error message</small>
+            </div>
+
+            <div class="box">
+                <i class="fas fa-key" aria-hidden="true"></i>
+                <input type="password" placeholder="Password" id="password" required name="User[Password]">
+                <i class="fas fa-eye" id="eye_1" onclick="showPassword()"></i>
+                <i class="fas fa-check-circle"></i>
+                <i class="fas fa-exclamation-circle"></i>
+                <small>Error message</small>
+            </div>
+            <div class="box">
+                <i class="fas fa-phone" aria-hidden="true"></i>
+                <input type="text" placeholder="Phone Number" id="phonenumber" required maxlength="10"
+                    name="User[Phone]">
+                <i class="fas fa-check-circle"></i>
+                <i class="fas fa-exclamation-circle"></i>
+                <small>Error message</small>
+            </div>
+
+            <input type="submit" value="Register" class="butt" onclick="Register()">
+            <div class="reg">
+                <h4>Already Have Account</h4>
+                <p><a href="login">Login</a></p>
+            </div>
+
+        </form>
+    </div>
+
+    <script src="/js/register.js"></script>
+
+</body>
+
+</html>

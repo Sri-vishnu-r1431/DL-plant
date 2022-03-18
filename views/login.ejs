@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="/styles/style.css">
+    <link rel="stylesheet" href="fontawesome-free-5.15.4-web/css/all.css">
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/fontawesome.min.css">
+    <style>
+        .box {
+            padding-bottom: 20px;
+            position: relative;
+        }
+
+        .box #eye {
+            right: 35px;
+            transform: translate(0, -50%);
+            position: absolute;
+            top: 45%;
+            cursor: pointer;
+        }
+
+        .box small {
+            color: #e74c3c;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            visibility: hidden;
+        }
+
+        .box.error small {
+            visibility: visible;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <form action="/api/login" method="POST" autocomplete="off">
+            <h1>Login</h1>
+            <div class="box">
+                <i class="fas fa-envelope" aria-hidden="true"></i>
+                <input type="email" placeholder="E-Mail" id="mail" required name="User[Email]">
+                <small>Error message</small>
+            </div>
+            <div class="box">
+                <i class="fas fa-key" aria-hidden="true"></i>
+                <input type="password" placeholder="Password" id="password" required name="User[Password]">
+                <i class="fas fa-eye" id="eye" onclick="showPassword()"></i>
+                <small>Error message</small>
+            </div>
+            <input type="submit" value="Login" class="butt" onclick="Login()">
+            <div class="reg">
+                <h4>Create new Account</h4>
+                <p><a href="register">Register Here!</a></p>
+            </div>
+        </form>
+    </div>
+    <script src="/js/index.js"></script>
+
+</body>
+
+</html>
